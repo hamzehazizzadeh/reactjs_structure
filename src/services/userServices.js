@@ -1,25 +1,16 @@
-import http from "./httpService";
-import config from "./config.json";
+import http from "./configServices/httpService";
+import config from "./configServices/config.json";
 
 // Auth Services
-export const registerUser = (user) => {
-  return http.post(
-    `${config.structureApi}/api/account/register`,
-    JSON.stringify(user)
-  );
+export const signupService = (userData) => {
+  return http.post(`${config.structureApi}/Auth/signup`, JSON.stringify(userData));
 };
 
-export const loginUser = (user) => {
-  return http.post(
-    `${config.structureApi}/api/account/signin`,
-    JSON.stringify(user)
-  );
+export const signinService = (userData) => {
+  return http.post(`${config.structureApi}/Auth/signin`, JSON.stringify(userData));
 };
 
-export const logoutUser = (token) => {
-  return http.post(
-    `${config.structureApi}/api/account/signout`,
-    JSON.stringify(token)
-  );
+export const signoutService = () => {
+  return http.post(`${config.structureApi}/Auth/signout`);
 };
 // End

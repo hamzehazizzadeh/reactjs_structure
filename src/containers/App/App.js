@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import Structure from "../Structure/Structure";
+import StructureContainer from "../StructureContainer/StructureContainer";
 
 function App() {
   return (
     <BrowserRouter>
-      <Structure />
+      <StructureContainer />
     </BrowserRouter>
   );
 }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { errorMessage } from "../utils/message/message";
+import { toastErrorMessage } from "../../utils/ToastMessageComponent/ToastMessageComponent";
 
 // const token = localStorage.getItem("token");
 
@@ -14,7 +14,7 @@ axios.interceptors.response.use(null, (error) => {
     error.response.status < 500;
 
   if (!expectedErrors) {
-    errorMessage("There was a problem with the server");
+    toastErrorMessage("There was a problem with the server");
   }
   return Promise.reject(error);
 });

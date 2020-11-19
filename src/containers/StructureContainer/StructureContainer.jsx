@@ -2,25 +2,25 @@ import React, { useEffect, useState } from "react";
 import { isEmpty } from "lodash";
 import { Switch, Route, Redirect } from "react-router";
 
-import MainLayout from "../../components/Layouts/MainLayout/MainLayout";
-import Home from './../../components/Home/Home';
-import NotFound from './../../components/NotFound/NotFound';
-import { decodeToken } from './../../utils/JWTUtils/decodeToken';
-import { logoutUser } from './../../services/userServices';
+import MainLayout from "../../Layouts/MainLayout/MainLayout";
+import HomeComponent from './../../components/HomeComponent/HomeComponent';
+import NotFoundPageComponent from "../../components/ErrorAndSuccessPageComponents/NotFoundPageComponent/NotFoundPageComponent";
+import { decodeJWT } from "../../utils/JWTUtils/decodeJWT/decodeJWT";
+import { signoutService } from "../../services/userServices";
 
-const Structure = () => {
+const StructureContainer = () => {
   const [user, setUser] = useState("");
   const token = localStorage.getItem("token");
   let tokenRole = localStorage.getItem("role");
 
   useEffect(() => {
     if (token) {
-      const decodedToken = decodeToken(token);
+      const decodedToken = decodeJWT(token);
       localStorage.setItem("role", decodedToken.payload.role);
       const dateNow = Date.now() / 1000;
       if (decodedToken.payload.exp < dateNow) {
         localStorage.clear();
-        logoutUser(decodedToken);
+        signoutService(decodedToken);
       } else {
         setUser(decodedToken.payload.unique_name);
       }
@@ -81,9 +81,9 @@ const Structure = () => {
             {/* Api */}
             <Route path="/api" />
             {/* Home Component */}
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={HomeComponent} />
             {/* Not Found Component */}
-            <Route path="*" exact component={NotFound} />
+            <Route path="*" exact component={NotFoundPageComponent} />
           </Switch>
         </MainLayout>
       </Route>
@@ -91,4 +91,4 @@ const Structure = () => {
   );
 };
 
-export default Structure;
+export default StructureContainer;

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 
-const Home = () => {
+const HomeComponent = () => {
   return (
     <Fragment>
       <Helmet>
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeComponent;

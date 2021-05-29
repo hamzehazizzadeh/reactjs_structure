@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
 
-export const reducers = combineReducers({});
+import { isLoaderReducer } from "./isLoaderReducer/isLoaderReducer";
+
+export const reducers = combineReducers({
+  isLoader: isLoaderReducer,
+});

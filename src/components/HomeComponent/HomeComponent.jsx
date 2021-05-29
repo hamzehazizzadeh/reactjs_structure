@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import { Helmet } from "react-helmet";
+
+import SiteTitleComponent from "./../../utils/SiteTitleComponent/SiteTitleComponent";
 
 const HomeComponent = () => {
   return (
     <Fragment>
-      <Helmet>
-        <title>Home | Structure</title>
-      </Helmet>
+      <SiteTitleComponent title="Home" />
+      
       <div className="text-center">
         <h2>Home</h2>
       </div>

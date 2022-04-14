@@ -1,3 +1,18 @@
+import jwt from "jsonwebtoken";
+
+//* Start Number Utils
+export const numberSeparate = (number) => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+//* End Number Utils
+
+//* Start JWT Utils
+export const decodeJWT = (token) => {
+  return jwt.decode(token, { complete: true });
+};
+//* End JWT Utils
+
+//* Start Convert Number Utils
 let persianNumbers = [
   /۰/g,
   /۱/g,
@@ -52,3 +67,15 @@ export const convertToEnglishNumber = (str) => {
   }
   return str;
 };
+//* End Convert Number Utils
+
+//* Start Date Utils
+export const getLocaleDate = (
+  locales = "fa-IR",
+  options = { year: "numeric", month: "2-digit", day: "2-digit" }
+) => {
+  return convertToEnglishNumber(
+    new Date().toLocaleDateString(locales, options)
+  );
+};
+//* End Date Utils

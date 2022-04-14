@@ -1,19 +1,18 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
 
-const ForbiddenPageComponent = () => {
+const NotFoundPage = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Forbidden! | Structure</title>
+        <title>Page Not Found! | Structure</title>
       </Helmet>
-
       <div className="container text-center">
-        <h2>403</h2>
-        <div>Forbidden!</div>
+        <h2>404</h2>
+        <div>Page Not Found!</div>
       </div>
     </Fragment>
   );
 };
 
-export default ForbiddenPageComponent;
+export default NotFoundPage;

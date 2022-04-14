@@ -1,11 +1,18 @@
 import axios from "axios";
-import { toastErrorMessage } from "../../utils/ToastMessageComponent/ToastMessageComponent";
+import { toastErrorMessage } from "../../utils/toastMessage";
 
-// const token = localStorage.getItem("token");
+// Axios Setting
+// Common Headers
+const token = localStorage.getItem("token");
 
+if (token) axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+axios.defaults.headers.common["Accept"] = "application/json";
+// End
+
+// Post Headers
 axios.defaults.headers.post["Content-Type"] = "application/json";
-
-// if (token) axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+// End
 
 axios.interceptors.response.use(null, (error) => {
   const expectedErrors =

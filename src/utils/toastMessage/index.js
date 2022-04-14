@@ -25,7 +25,7 @@ export const deliverySuccessMessage = (message, redirectUrl) => {
   Swal.fire({
     icon: "success",
     html: `<h5> ${message} </h5>`,
-    confirmButtonText: "تایید",
+    confirmButtonText: "ok",
     onClose: () => {
       window.location.href = redirectUrl;
     },

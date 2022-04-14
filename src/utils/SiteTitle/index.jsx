@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const SiteTitleComponent = ({ title, isVisibleSuffix = true }) => {
+const SiteTitle = ({ title, isVisibleSuffix = true }) => {
   return (
     <Helmet>
       <title>
@@ -11,4 +11,4 @@ const SiteTitleComponent = ({ title, isVisibleSuffix = true }) => {
   );
 };
 
-export default SiteTitleComponent;
+export default SiteTitle;

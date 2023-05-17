@@ -1,5 +1,3 @@
-import jwt from "jsonwebtoken";
-
 //* Start Number Utils
 export const numberSeparate = (number) => {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -8,7 +6,8 @@ export const numberSeparate = (number) => {
 
 //* Start JWT Utils
 export const decodeJWT = (token) => {
-  return jwt.decode(token, { complete: true });
+  // Todo: Fixed jsonwebtoken Bug
+  // return jwt.decode(token, { complete: true });
 };
 //* End JWT Utils
 

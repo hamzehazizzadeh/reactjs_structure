@@ -1,5 +1,6 @@
 import axios from "axios";
-import { toastErrorMessage } from "../../utils/toastMessage";
+
+import { toastErrorMessage } from "../../utils/toastMessage/toastMessage";
 
 // Axios Setting
 // Common Headers

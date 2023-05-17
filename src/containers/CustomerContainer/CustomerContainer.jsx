@@ -1,8 +1,8 @@
 import React from "react";
-import { Switch, Redirect } from "react-router";
+import { Routes, Navigate } from "react-router-dom";
 import { isEmpty } from "lodash";
 
-import PublicLayout from "../../layouts/PublicLayout";
+import PublicLayout from "../../layouts/PublicLayout/PublicLayout";
 import { decodeJWT } from "../../utils";
 
 const CustomerContainer = () => {
@@ -13,18 +13,18 @@ const CustomerContainer = () => {
   const roleName = decodeJWT(token)?.payload?.role;
 
   if (!isLogin || (roleName !== "CUSTOMER" && roleName !== "ADMIN"))
-    return <Redirect to="/" />;
+    return <Navigate to="/" replace />;
 
   return (
     <PublicLayout>
-      <Switch>
+      <Routes>
         {/* Dashboard Component */}
         {/* <Route
           path="/Customer/Dashboard"
           
           render={() => <DashboardCustomer />}
         /> */}
-      </Switch>
+      </Routes>
     </PublicLayout>
   );
 };

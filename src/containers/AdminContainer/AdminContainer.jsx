@@ -1,8 +1,8 @@
 import React from "react";
-import { Switch, Redirect } from "react-router";
+import { Routes, Navigate } from "react-router-dom";
 import { isEmpty } from "lodash";
 
-import AdminLayout from "../../layouts/AdminLayout";
+import AdminLayout from "../../layouts/AdminLayout/AdminLayout";
 import { decodeJWT } from "../../utils";
 
 const AdminContainer = () => {
@@ -12,18 +12,18 @@ const AdminContainer = () => {
 
   const roleName = decodeJWT(token)?.payload?.role;
 
-  if (!isLogin || roleName !== "ADMIN") return <Redirect to="/" />;
+  if (!isLogin || roleName !== "ADMIN") return <Navigate to="/" replace />;
 
   return (
     <AdminLayout>
-      <Switch>
+      <Routes>
         {/* Dashboard Component */}
         {/* <Route
           path="/Admin/Dashboard"
           
           render={() => <DashboardAdmin />}
         /> */}
-      </Switch>
+      </Routes>
     </AdminLayout>
   );
 };

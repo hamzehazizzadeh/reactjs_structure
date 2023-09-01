@@ -6,7 +6,7 @@ import AdminContainer from "../AdminContainer/AdminContainer";
 import CustomerContainer from "../CustomerContainer/CustomerContainer";
 import PublicContainer from "../PublicContainer/PublicContainer";
 import NotFoundPage from "./../../components/Page/NotFoundPage/NotFoundPage";
-import PreLoader from "./../../utils/PreLoader/PreLoader";
+import PreLoader from "../../helpers/PreLoader/PreLoader";
 import { decodeJWT } from "../../utils";
 
 const App = () => {

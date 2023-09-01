@@ -1,17 +1,14 @@
-import React, { Fragment } from "react";
-import { Helmet } from "react-helmet";
+import SiteTitle from "../../../helpers/SiteTitle/SiteTitle";
 
 const NotFoundPage = () => {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Page Not Found! | Structure</title>
-      </Helmet>
+    <>
+      <SiteTitle title="Page Not Found!" />
       <div className="container text-center">
         <h2>404</h2>
         <div>Page Not Found!</div>
       </div>
-    </Fragment>
+    </>
   );
 };
 

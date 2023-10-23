@@ -1,12 +1,12 @@
 import http from "./configServices/httpService";
-import { productApi } from "./configServices/config.json";
+import { base_url } from "./configServices/config";
 
 // OTP Services
 export const sendOTPService = (data) => {
-  return http.post(`${productApi}/Auth/OTP/Send`, JSON.stringify(data));
+  return http.post(`${base_url}/Auth/OTP/Send`, JSON.stringify(data));
 };
 
 export const verifyOTPService = (data) => {
-  return http.post(`${productApi}/Auth/OTP/Verify`, JSON.stringify(data));
+  return http.post(`${base_url}/Auth/OTP/Verify`, JSON.stringify(data));
 };
 // End

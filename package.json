@@ -1,6 +1,6 @@
 {
   "name": "reactjs_structure",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "private": true,
   "description": "A personal structure for your react js projects that you can use in your projects if you wish",
   "dependencies": {
